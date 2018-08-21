@@ -11,6 +11,8 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
+import { AppProvider } from '../providers/app/app';
+import { LoginPage } from '../pages/login/login'
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { Camera } from '@ionic-native/camera';
     Transfer,
     Camera,
     FilePath,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    LoginPage,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AppProvider
   ]
 })
 export class AppModule {}
