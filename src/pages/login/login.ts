@@ -36,7 +36,7 @@ export class LoginPage {
       .subscribe((response: any) => {
         window.sessionStorage.setItem('token', response.token);
         window.sessionStorage.setItem('userId', response.UserId);
-        console.log(response);
+        console.log("works",response);
         this.navCtrl.setRoot(HomePage);
       })
     
