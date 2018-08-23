@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-    <div class="form-container">
+    <!-- <div class="form-container">
   
 
         <span class="error" *ngIf="error">{{ error }}</span>
@@ -26,6 +26,45 @@
       
     
       <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
-    </div>
+    </div> -->
 
+</ion-content>
+
+
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="http://placehold.it/300x200"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+     <form (ngSubmit)="onLogin()">  <!-- #registerForm="ngForm" -->
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input [(ngModel)]="user.email" name="email" type="text" placeholder="Email"  ></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input [(ngModel)]="user.password" name="password" type="password" placeholder="Password"  ></ion-input>
+            </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+            <button  ion-button (click)="onLogin()" id="user" class="submit-btn" full type="submit" >Login</button>
+          <!-- <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button> -->
+          <!-- <button ion-button class="register-btn" block clear (click)="onLogin()" id="user">Create New Account</button> -->
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
 </ion-content>
